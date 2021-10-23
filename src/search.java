@@ -1,7 +1,7 @@
 public class search {
 
+    // sequential(linear) search
     public static int sequential_search(int A[], int search_key){
-        // also called linear search
         // returns the index of the search key if found else returns -1
         int i = 0;
         int n = A.length;
@@ -13,6 +13,7 @@ public class search {
         else return -1;
     }
 
+    // binary search
     public static int binary_search(int A[], int search_key){
         //  returns the index of the search key if found  else returns -1
         int n = A.length;

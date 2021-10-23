@@ -1,5 +1,6 @@
 public class sort {
 
+    // selection sort algorithm
     public static int[] selection_sort(int A[]){
         int n = A.length;
 
@@ -17,7 +18,7 @@ public class sort {
         return A;
     }
 
-
+    // insertion sort algorithm: takes an array as argument
     public static int[] insertionSort(int A[]){
         int n = A.length;
 
@@ -35,7 +36,7 @@ public class sort {
     }
 
 
-
+    // a supplement method to quicksort algorithm
     private static int partition(int[] arr, int start, int end) {
         int pivot = arr[end];
         int i = (start - 1);
@@ -54,22 +55,28 @@ public class sort {
         return (i + 1);
     }
 
-    private static void quick(int[] arr, int start, int end) {
+    // a supplement method to quicksort algorithm
+    private static int[] quick(int[] arr, int start, int end) {
         if (start < end) {
             int part = partition(arr, start, end);
             quick(arr, start, part - 1);
             quick(arr, part + 1, end);
         }
+        return arr;
     }
 
-    // quickSort
-    public static void quickSort(int[] arr) {
+    // quickSort algorithm
+    public static int[] quickSort(int[] arr) {
         int start = 0;
         int end = (arr.length - 1);
-        quick(arr, start, end);
+        arr = quick(arr, start, end);
+
+        return arr;
     }
 
-    public static void shellSort(int[] arr) {
+
+    // shell sort algorithm
+    public static int[] shellSort(int[] arr) {
         int n = arr.length;
 
         for (int gap = n/2; gap > 0; gap /= 2) {
@@ -84,6 +91,7 @@ public class sort {
 
             }
         }
+        return arr;
     }
 
 
